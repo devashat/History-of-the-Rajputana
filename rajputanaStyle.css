@@ -1,0 +1,45 @@
+/* Footer Styling */
+.authors {
+    line-height: 1;
+    text-align: center;
+}
+#footer {
+    position:relative;
+}
+.footer {
+    background-color: lightgray;
+    position: relative;
+    right: 0px; 
+    font-size: 16px;
+}
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#sources {
+    font-family: 'Lato', sans-serif;
+}
+.credits {
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+}
+
+.sources_list {
+    list-style-type: none; 
+    padding: 0px !important;
+    font-size: 1.1em;
+}
+.sources_header {
+    font-weight: bold;
+}
+.column {
+    float: left;
+    padding: 0px;
+}
+.left, .right {
+    width: 25%;
+}
+.middle1, .middle2 {
+    width: 25%;
+}
