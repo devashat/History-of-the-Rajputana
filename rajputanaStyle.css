@@ -54,3 +54,8 @@
 .middle2 {
     width: 25%;
 }
+
+/* clips the rects to the grpah so they don't pass the axis  */
+.timeRect {
+    clip-path: url(#clip);
+}

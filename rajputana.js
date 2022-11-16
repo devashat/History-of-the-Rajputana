@@ -40,6 +40,7 @@ var brush = d3.brushX()
     .extent([[0, 0], [width, height2]])
     .on("start brush end", brushed);
 
+// clips time rects to the graph so it won't go over the axis
 svgTimeline.append("defs").append("clipPath")
     .attr("id", "clip")
     .append("rect")
