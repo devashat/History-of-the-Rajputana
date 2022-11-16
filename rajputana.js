@@ -1,8 +1,8 @@
-var margin = { top: 20, right: 80, bottom: 150, left: 125 },
-    margin2 = { top: 450, right: 80, bottom: 50, left: 0 },
+var margin = { top: 20, right: 80, bottom: 250, left: 125 },
+    margin2 = { top: 500, right: 80, bottom: 50, left: 0 },
     width = 1000 - margin.left - margin.right,
-    height = 600 - margin.top - margin.bottom;
-    height2 = 600 - margin2.top - margin2.bottom;
+    height = 750 - margin.top - margin.bottom,
+    height2 = 750 - margin2.top - margin2.bottom;
 
 
 
@@ -34,10 +34,11 @@ var parseDate = d3.timeParse("%d %B %Y");
 var xAxis = d3.axisBottom(xScale).tickFormat(d3.timeFormat("%Y")).ticks(5);
 var xAxis2 = d3.axisBottom(xScale).tickFormat(d3.timeFormat("%Y")).ticks(5);
 var yAxis = d3.axisLeft(yScale);
+var yAxis2 = d3.axisLeft(yScale2);
 
-// var brush = d3.brushX()
-//     .extent([[0, 0], [width, height2]])
-//     .on("brush end", brushed);
+var brush = d3.brushX()
+    .extent([[0, 0], [width, height2]])
+    .on("start brush end", brushed);
 
 svgTimeline.append("defs").append("clipPath")
     .attr("id", "clip")
@@ -51,21 +52,23 @@ d3.csv("sampleCsv.csv", function (error, data) {
     //xScale.domain([function(d) {return d3.min(parseDate(d.start));}, function(d) {return d3.max(parseDate(d.end));}]);
     xScale.domain([new Date(1100, 0, 0), new Date(1800, 0, 0)]);
     yScale.domain(data.map(function (d) { return d.name; }));
+    xScale2.domain(xScale.domain());
+    yScale2.domain(yScale.domain());
 
     svgTimeline.append("g")
-        .attr("class", "x axis")
+        .attr("class", "xaxis")
         .attr("transform", "translate(0," + height + ")")
         .call(xAxis);
 
     svgTimeline.append("g")
-        .attr("class", "y axis")
+        .attr("class", "axis axis--y")
         .call(yAxis)
         .append("text");
 
     svgTimeline.append("g").selectAll("rect")
         .data(data)
         .enter().append("rect")
-        .attr("class", "rect")
+        .attr("class", "timeRect")
         .attr("y", function (d) { return yScale(d.name); })
         .attr("x", function (d) { return xScale(parseDate(d.start)); })
         .attr("width", function (d) { return (xScale(parseDate(d.end)) - xScale(parseDate(d.start))); })
@@ -77,7 +80,39 @@ d3.csv("sampleCsv.csv", function (error, data) {
         .attr("transform", "translate(0," + height2 + ")")
         .call(xAxis2);
 
+    // context.append("g")
+    //     .attr("class", "axis axis--y")
+    //     .call(yAxis2)
+    //     .append("text");
+
+    context.selectAll("rect")
+        .data(data)
+        .enter().append("rect")
+        //.attr("class", "rect")
+        .attr("y", function (d) { return yScale2(d.name); })
+        .attr("x", function (d) { return xScale2(parseDate(d.start)); })
+        .attr("width", function (d) { return (xScale2(parseDate(d.end)) - xScale2(parseDate(d.start))); })
+        .attr("height", yScale2.bandwidth())
+        .style("fill", function (d) { return colorScale(d.name); });
+
+    context.append("g")
+        .attr("class", "brush")
+        .call(brush)
+        .call(brush.move, xScale.range());
+
+        //[xScale(1400), xScale(1600)]
+
 });
+
+
+function brushed(d) {
+    xScale.domain([xScale2.invert(d3.event.selection[0]), xScale2.invert(d3.event.selection[1])]);
+    svgTimeline.selectAll(".xaxis").call(xAxis);
+    
+    svgTimeline.selectAll(".timeRect")
+      .attr("x", function(d){ return xScale(parseDate(d.start));})
+      .attr("width", function (d) { return (xScale(parseDate(d.end)) - xScale(parseDate(d.start))); });
+}
 
 d3.json("sample.json", function (error, data) {
     if (error) return console.error(error);
