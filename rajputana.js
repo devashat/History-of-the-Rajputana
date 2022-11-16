@@ -1,6 +1,9 @@
-var margin = { top: 20, right: 80, bottom: 30, left: 125 },
+var margin = { top: 20, right: 80, bottom: 150, left: 125 },
+    margin2 = { top: 450, right: 80, bottom: 50, left: 0 },
     width = 1000 - margin.left - margin.right,
     height = 600 - margin.top - margin.bottom;
+    height2 = 600 - margin2.top - margin2.bottom;
+
 
 
 var svgTimeline = d3.select("body").append("svg")
@@ -15,20 +18,38 @@ var svgDenogram = d3.select("body").append("svg")
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-var xScale = d3.scaleTime().range([width, 0]);
+var context = svgTimeline.append("g")
+    .attr("class", "context")
+    .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
+
+var xScale = d3.scaleTime().range([0, width]);
+var xScale2 = d3.scaleTime().range([0, width]);
 var yScale = d3.scaleBand().rangeRound([0, height]).padding(0.1);
+var yScale2 = d3.scaleBand().rangeRound([0, height2]).padding(0.1);
+
 var colorScale = d3.scaleOrdinal(d3.schemeCategory10).domain(3);
 
 var parseDate = d3.timeParse("%d %B %Y");
 
 var xAxis = d3.axisBottom(xScale).tickFormat(d3.timeFormat("%Y")).ticks(5);
+var xAxis2 = d3.axisBottom(xScale).tickFormat(d3.timeFormat("%Y")).ticks(5);
 var yAxis = d3.axisLeft(yScale);
+
+// var brush = d3.brushX()
+//     .extent([[0, 0], [width, height2]])
+//     .on("brush end", brushed);
+
+svgTimeline.append("defs").append("clipPath")
+    .attr("id", "clip")
+    .append("rect")
+    .attr("width", width)
+    .attr("height", height);
 
 d3.csv("sampleCsv.csv", function (error, data) {
     if (error) throw error;
 
     //xScale.domain([function(d) {return d3.min(parseDate(d.start));}, function(d) {return d3.max(parseDate(d.end));}]);
-    xScale.domain([new Date(1800, 0, 0), new Date(1100, 0, 0)]);
+    xScale.domain([new Date(1100, 0, 0), new Date(1800, 0, 0)]);
     yScale.domain(data.map(function (d) { return d.name; }));
 
     svgTimeline.append("g")
@@ -50,6 +71,11 @@ d3.csv("sampleCsv.csv", function (error, data) {
         .attr("width", function (d) { return (xScale(parseDate(d.end)) - xScale(parseDate(d.start))); })
         .attr("height", yScale.bandwidth())
         .style("fill", function (d) { return colorScale(d.name); });
+
+    context.append("g")
+        .attr("class", "axis axis--x")
+        .attr("transform", "translate(0," + height2 + ")")
+        .call(xAxis2);
 
 });
 
