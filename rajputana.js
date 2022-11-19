@@ -41,7 +41,7 @@ svgTimeline.append("defs").append("clipPath")
     .attr("width", width)
     .attr("height", height);
 
-d3.csv("sampleCsv.csv", function (error, data) {
+d3.csv("kings.csv", function (error, data) {
     if (error) throw error;
 
     //xScale.domain([function(d) {return d3.min(parseDate(d.start));}, function(d) {return d3.max(parseDate(d.end));}]);
