@@ -9,6 +9,24 @@
                     "children": []
                 }
             ]
+        },
+        {
+            "name": "TEST",
+            "children": [
+                {
+                    "name": "SON OF TEST",
+                    "children": [
+                        {
+                            "name": "GRANDSON I OF TEST",
+                            "children": []
+                        },
+                        {
+                            "name": "GRANDSON II OF TEST",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

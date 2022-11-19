@@ -59,3 +59,20 @@
 .timeRect {
     clip-path: url(#clip);
 }
+
+/* Dendogram styles */
+.node circle {
+    fill: #fff;
+    stroke: rgb(233, 190, 19);
+    stroke-width: 3px;
+}
+
+.node text {
+    font: 12px sans-serif;
+}
+
+.link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 2px;
+}
