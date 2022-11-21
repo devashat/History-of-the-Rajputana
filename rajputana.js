@@ -4,7 +4,9 @@ var margin = { top: 20, right: 80, bottom: 250, left: 125 },
     height = 750 - margin.top - margin.bottom,
     height2 = 750 - margin2.top - margin2.bottom;
 
-
+var tooltip = d3.select("body").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
 
 var svgTimeline = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -24,6 +26,7 @@ var yScale2 = d3.scaleBand().rangeRound([0, height2]).padding(0.1);
 var colorScale = d3.scaleOrdinal(d3.schemeCategory10).domain(3);
 
 var parseDate = d3.timeParse("%d %B %Y");
+var formatTime = d3.timeFormat("%B %d, %Y");
 
 var xAxis = d3.axisBottom(xScale).tickFormat(d3.timeFormat("%Y")).ticks(5);
 var xAxis2 = d3.axisBottom(xScale).tickFormat(d3.timeFormat("%Y")).ticks(5);
@@ -68,7 +71,20 @@ d3.csv("kings.csv", function (error, data) {
         .attr("x", function (d) { return xScale(parseDate(d.start)); })
         .attr("width", function (d) { return (xScale(parseDate(d.end)) - xScale(parseDate(d.start))); })
         .attr("height", yScale.bandwidth())
-        .style("fill", function (d) { return colorScale(d.name); });
+        .style("fill", function (d) { return colorScale(d.name); })
+        .on("mouseover", function (d) {
+            tooltip.transition()
+                .duration(200)
+                .style("opacity", .9);
+            tooltip.html(d.name + "<br>" + formatTime(parseDate(d.birth)) + " - " + formatTime(parseDate(d.death)) +  "<br><br> Reign <br>" + formatTime(parseDate(d.start)) + " - " + formatTime(parseDate(d.end)))
+                .style("left", (d3.event.pageX) + "px")
+                .style("top", (d3.event.pageY - 28) + "px");
+        })
+        .on("mouseout", function (d) {
+            tooltip.transition()
+                .duration(500)
+                .style("opacity", 0);
+        });
 
     context.append("g")
         .attr("class", "axis axis--x")
