@@ -1,5 +1,5 @@
-var margin = { top: 20, right: 80, bottom: 250, left: 125 },
-    margin2 = { top: 500, right: 80, bottom: 50, left: 0 },
+var margin = { top: 200, right: 80, bottom: 250, left: 125 },
+    margin2 = { top: 550, right: 80, bottom: 50, left: 0 },
     width = 1000 - margin.left - margin.right,
     height = 750 - margin.top - margin.bottom,
     height2 = 750 - margin2.top - margin2.bottom;
@@ -11,12 +11,21 @@ var tooltip = d3.select("body").append("div")
 var svgTimeline = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
+
+var warTimeline = svgTimeline
     .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    .attr("class", "wars")
+    .attr("transform", "translate(" + margin.left + ", 40)");
+
+var kingTimeLine = svgTimeline
+    .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+    .attr("class", "kingtime");
+
 
 var context = svgTimeline.append("g")
     .attr("class", "context")
-    .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
+    .attr("transform", "translate(" + margin.left + "," + margin2.top + ")");
 
 var xScale = d3.scaleTime().range([0, width]);
 var xScale2 = d3.scaleTime().range([0, width]);
@@ -42,32 +51,32 @@ svgTimeline.append("defs").append("clipPath")
     .attr("id", "clip")
     .append("rect")
     .attr("width", width)
-    .attr("height", height);
+    .attr("height", height)
 
-d3.csv("kings.csv", function (error, data) {
+d3.csv("kings1.csv", function (error, data) {
     if (error) throw error;
 
     //xScale.domain([function(d) {return d3.min(parseDate(d.start));}, function(d) {return d3.max(parseDate(d.end));}]);
     xScale.domain([new Date(1100, 0, 0), new Date(1800, 0, 0)]);
-    yScale.domain(data.map(function (d) { return d.name; }));
+    yScale.domain(data.map(function (d) { return d.dynasty; }));
     xScale2.domain(xScale.domain());
     yScale2.domain(yScale.domain());
 
-    svgTimeline.append("g")
+    kingTimeLine.append("g")
         .attr("class", "xaxis")
         .attr("transform", "translate(0," + height + ")")
         .call(xAxis);
 
-    svgTimeline.append("g")
+    kingTimeLine.append("g")
         .attr("class", "axis axis--y")
         .call(yAxis)
         .append("text");
 
-    svgTimeline.append("g").selectAll("rect")
+    kingTimeLine.append("g").selectAll("rect")
         .data(data)
         .enter().append("rect")
         .attr("class", "timeRect")
-        .attr("y", function (d) { return yScale(d.name); })
+        .attr("y", function (d) { return yScale(d.dynasty); })
         .attr("x", function (d) { return xScale(parseDate(d.start)); })
         .attr("width", function (d) { return (xScale(parseDate(d.end)) - xScale(parseDate(d.start))); })
         .attr("height", yScale.bandwidth())
@@ -76,7 +85,7 @@ d3.csv("kings.csv", function (error, data) {
             tooltip.transition()
                 .duration(200)
                 .style("opacity", .9);
-            tooltip.html(d.name + "<br>" + formatTime(parseDate(d.birth)) + " - " + formatTime(parseDate(d.death)) +  "<br><br> Reign <br>" + formatTime(parseDate(d.start)) + " - " + formatTime(parseDate(d.end)))
+            tooltip.html(d.name + "<br>" + formatTime(parseDate(d.birth)) + " - " + formatTime(parseDate(d.death)) + "<br><br> Reign <br>" + formatTime(parseDate(d.start)) + " - " + formatTime(parseDate(d.end)))
                 .style("left", (d3.event.pageX) + "px")
                 .style("top", (d3.event.pageY - 28) + "px");
         })
@@ -100,7 +109,7 @@ d3.csv("kings.csv", function (error, data) {
         .data(data)
         .enter().append("rect")
         //.attr("class", "rect")
-        .attr("y", function (d) { return yScale2(d.name); })
+        .attr("y", function (d) { return yScale2(d.dynasty); })
         .attr("x", function (d) { return xScale2(parseDate(d.start)); })
         .attr("width", function (d) { return (xScale2(parseDate(d.end)) - xScale2(parseDate(d.start))); })
         .attr("height", yScale2.bandwidth())
@@ -108,6 +117,7 @@ d3.csv("kings.csv", function (error, data) {
 
     context.append("g")
         .attr("class", "brush")
+        .attr("x", 125)
         .call(brush)
         .call(brush.move, xScale.range());
 
@@ -115,14 +125,48 @@ d3.csv("kings.csv", function (error, data) {
 
 });
 
+d3.csv("wars.csv", function (error, data) {
+    if (error) throw error;
+
+    xScale.domain([new Date(1100, 0, 0), new Date(1800, 0, 0)]);
+    yScale.domain(["Wars"]);
+    xScale2.domain(xScale.domain());
+    yScale2.domain(yScale.domain());
+
+    // warTimeline.append("g")
+    //     .attr("class", "topAxis")
+    //     .attr("transform", "translate(0," + height2 + ")")
+    //     .call(xAxis2);
+
+    warTimeline.append("g")
+        .attr("class", "axis axis--y")
+        .call(yAxis2)
+        .append("text");
+
+    warTimeline.selectAll("circle")
+        .data(data)
+        .enter().append("circle")
+        .attr("class", "circle")
+        .attr('cx', function (d) { console.log(parseDate(d.start)); return xScale2(parseDate(d.start)); })
+        .attr('cy', function (d) { return yScale2(["Wars"]) + 50; })
+        //.attr('r', function (d) { return (xScale2(parseDate(d.end)) - xScale2(parseDate(d.start)));})
+        .attr('r', 15)
+        .style('fill', 'green');
+
+});
+
 
 function brushed(d) {
     xScale.domain([xScale2.invert(d3.event.selection[0]), xScale2.invert(d3.event.selection[1])]);
     svgTimeline.selectAll(".xaxis").call(xAxis);
+    //svgTimeline.selectAll(".topAxis").call(xAxis2);
 
     svgTimeline.selectAll(".timeRect")
         .attr("x", function (d) { return xScale(parseDate(d.start)); })
         .attr("width", function (d) { return (xScale(parseDate(d.end)) - xScale(parseDate(d.start))); });
+
+    svgTimeline.selectAll(".circle")
+        .attr('cx', function (d) { return xScale(parseDate(d.start)); });
 }
 
 
