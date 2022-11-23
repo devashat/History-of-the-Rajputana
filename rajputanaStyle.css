@@ -58,6 +58,11 @@
 /* clips the rects to the grpah so they don't pass the axis  */
 .timeRect {
     clip-path: url(#clip);
+    /* clip-path: url(#clip2); */
+}
+
+.circle {
+    clip-path: url(#clip);
 }
 
 /* tooltip styling */

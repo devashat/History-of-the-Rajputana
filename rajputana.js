@@ -22,7 +22,6 @@ var kingTimeLine = svgTimeline
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
     .attr("class", "kingtime");
 
-
 var context = svgTimeline.append("g")
     .attr("class", "context")
     .attr("transform", "translate(" + margin.left + "," + margin2.top + ")");
@@ -51,7 +50,7 @@ svgTimeline.append("defs").append("clipPath")
     .attr("id", "clip")
     .append("rect")
     .attr("width", width)
-    .attr("height", height)
+    .attr("height", height);
 
 d3.csv("kings1.csv", function (error, data) {
     if (error) throw error;
