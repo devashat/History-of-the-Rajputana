@@ -1,77 +1,78 @@
 king,war,enemy,region,start,end,
-Humayun,Siege of Kalinjar,Chandel kings,Uttar Pradesh (North India),1 June 1531,,https://farbound.net/wars-of-humayun/ 
-Humayun,Battle of Dadhra,Mahmud Lodi (Afghan) ,Bihar (East India),1 August 1532,,
-Humayun,Siege of Chunar,Sher Shah Sur (Afghan),Bihar (East India),1 September 1532,"December 31, 1532",
-Humayun,Battle of Bhojpur,"Muhammad Zaman Mirza, Muhammad Sultan Mirza",Bhojpuri (Northeast India),1 June 1534,,
-Humayun,Conquest of Malwa and Gujarat,Gujarati Sultan,"Malwa (West-central India), Gujara (West India)",1 June 1535,"June 01, 1536",
-Humayun,Second siege of Chunar and invasion of Bengal,Sher Shah Sur,Bengal (East India),1 June 1537,"June 01, 1538",
-Humayun,Battle of Chausa,Sher Shah Sur,Bihar (East India),June 26 1539,"June 26, 1539",
-Humayun,Battle of Kannuj,Sher Shah Sur,Uttar Pradesh (North India),"May 17, 1540","May 17, 1540",
-Humayun,Battle of Machiwara,"Nasseb Khan, Tartar Khan",Punjab (North India),"February 15, 1555","February 15, 1555",
-Humayun,Battle of Sirhind,Sikandar Shah Suri,Punjab (North India),"June 22, 1555","June 22, 1555",
-Bābur,First Battle of Panipat,Ibrahim Lodi,Hindustan (Northern India),"April 12, 1526","April 12, 1526",http://www.historyofwar.org/articles/battles_panipat_first.html
-Bābur,Battle of Bayana,Rana Sanga,Bayana (Northern India),"February 21, 1527","February 21, 1527",https://military-history.fandom.com/wiki/Battle_of_Bayana
-Bābur,Battle of Khanwa,Rana Sanga,Hindustan (Northern India),"March 16, 1527","March 16, 1527",https://byjus.com/free-ias-prep/battle-of-khanwa-1527/
+Humayun,Siege of Kalinjar,Chandel kings,Uttar Pradesh (North India),1 June 1531,1 June 1531,https://farbound.net/wars-of-humayun/ 
+Humayun,Battle of Dadhra,Mahmud Lodi (Afghan) ,Bihar (East India),1 August 1532,1 August 1532,
+Humayun,Siege of Chunar,Sher Shah Sur (Afghan),Bihar (East India),1 September 1532,31 December 1532,
+Humayun,Battle of Bhojpur,"Muhammad Zaman Mirza, Muhammad Sultan Mirza",Bhojpuri (Northeast India),1 June 1534,1 June 1534,
+Humayun,Conquest of Malwa and Gujarat,Gujarati Sultan,"Malwa (West-central India), Gujara (West India)",1 June 1535,1 June 1536,
+Humayun,Second siege of Chunar and invasion of Bengal,Sher Shah Sur,Bengal (East India),1 July 1537,1 June 1538,
+Humayun,Battle of Chausa,Sher Shah Sur,Bihar (East India),26 June 1539,26 June 1539,
+Humayun,Battle of Kannuj,Sher Shah Sur,Uttar Pradesh (North India),17 May 1540,17 May 1540,
+Humayun,Battle of Machiwara,"Nasseb Khan, Tartar Khan",Punjab (North India),15 February 1555,15 February 1555,
+Humayun,Battle of Sirhind,Sikandar Shah Suri,Punjab (North India),22 June 1555,22 June 1555,
+Bābur,First Battle of Panipat,Ibrahim Lodi,Hindustan (Northern India),12 April 1526,12 April 1526,http://www.historyofwar.org/articles/battles_panipat_first.html
+Rana Sanga,Battle of Bayana,Babur,Bayana (Northern India),21 February 1527,21 February 1527,https://military-history.fandom.com/wiki/Battle_of_Bayana
+Rana Sanga,Battle of Khanwa,Babur,Hindustan (Northern India),16 March 1527,16 March 1527,https://byjus.com/free-ias-prep/battle-of-khanwa-1527/
 ,,,,,,https://www.leadthecompetition.in/GK/history/battles-during-mughal-rule.html
-Prithviraj Chauhan,Conflict with Nagarjuna,Nagarjuna,Gudapura (Northern India),1180,,https://www.vedantu.com/biography/prithviraj-chauhan-biography
-Prithviraj Chauhan,Conflict with Bhadanakas,Bhandanakas,Bayana (Northern India),1182,,https://www.britannica.com/biography/Prithviraja-III
-Prithviraj Chauhan,Conflict with Chandelas,Chandela King Paramardi,"Mahoba, Uttar Pradesh (Northern india)",1182,1183,https://indianexpress.com/article/explained/everyday-explainers/prithviraj-chauhan-akshay-kumar-gujjar-rajput-communities-rajasthan-7934307/
-Prithviraj Chauhan,Conflict with Gahadavalas,Jayachandra,Kannauj (Northern India),1192,,
-Prithviraj Chauhan,The First Battle of Tarain,Muhammad of Ghor,"Tabarhinda (Bathinda, Punjab Northwestern india) ",1190,1191,
-Prithviraj Chauhan,The Second Battle of Tarain,Muhammad of Ghor,Chahamana (Northern India),1192,,
+Prithviraj Chauhan,Conflict with Nagarjuna,Nagarjuna,Gudapura (Northern India),25 March 1903,25 March 1903,https://www.vedantu.com/biography/prithviraj-chauhan-biography
+Prithviraj Chauhan,Conflict with Bhadanakas,Bhandanakas,Bayana (Northern India),27 March 1903,27 March 1903,https://www.britannica.com/biography/Prithviraja-III
+Prithviraj Chauhan,Conflict with Chandelas,Chandela King Paramardi,"Mahoba, Uttar Pradesh (Northern india)",27 March 1903,28 March 1903,https://indianexpress.com/article/explained/everyday-explainers/prithviraj-chauhan-akshay-kumar-gujjar-rajput-communities-rajasthan-7934307/
+Prithviraj Chauhan,Conflict with Gahadavalas,Jayachandra,Kannauj (Northern India),6 April 1903,6 April 1903,
+Prithviraj Chauhan,The First Battle of Tarain,Muhammad of Ghor,"Tabarhinda (Bathinda, Punjab Northwestern india) ",4 April 1903,5 April 1903,
+Prithviraj Chauhan,The Second Battle of Tarain,Muhammad of Ghor,Chahamana (Northern India),6 April 1903,6 April 1903,
 ,,,,,,
-Rana Sanga,Battle of Khatoli,Ibrahim Lodi,Mewar (Southern Rajasthan),1518,,https://dharmayudh.com/rana-sanga-fierce-rajput-legend-who-defeated-every-invader-from-mughals-to-sultanates-of-gujrat-malwa/#Rana_Sanga_and_War_against_Delhi_Sultanate_Battle_of_Khatoli
-Rana Sanga,Battle of Dholpur,"Ibrahim Lodi, Sultan of Malwa ","Dholpur, Rajasthan (Western india)",1519,,
-Rana Sanga,Battle of Gagron,Mahamud Khalji II,"Gagron,Rajasthan(Western India)",1519,,https://byjus.com/free-ias-prep/rana-sanga/
-Rana Sanga,Battle of Khanwa,Babur,Khanwa (East India),"March 16, 1527",,https://dharmayudh.com/rana-sanga-fierce-rajput-legend-who-defeated-every-invader-from-mughals-to-sultanates-of-gujrat-malwa/#Battle_of_Khanwa
+Rana Sanga,Battle of Khatoli,Ibrahim Lodi,Mewar (Southern Rajasthan),26 February 1904,26 February 1904,https://dharmayudh.com/rana-sanga-fierce-rajput-legend-who-defeated-every-invader-from-mughals-to-sultanates-of-gujrat-malwa/#Rana_Sanga_and_War_against_Delhi_Sultanate_Battle_of_Khatoli
+Rana Sanga,Battle of Dholpur,"Ibrahim Lodi, Sultan of Malwa ","Dholpur, Rajasthan (Western india)",27 February 1904,27 February 1904,
+Rana Sanga,Battle of Gagron,Mahamud Khalji II,"Gagron,Rajasthan(Western India)",27 February 1904,27 February 1904,https://byjus.com/free-ias-prep/rana-sanga/
+Rana Sanga,Battle of Khanwa,Babur,Khanwa (East India),16 March 1527,16 March 1527,https://dharmayudh.com/rana-sanga-fierce-rajput-legend-who-defeated-every-invader-from-mughals-to-sultanates-of-gujrat-malwa/#Battle_of_Khanwa
+Rana Sanga,Battle of Bayana,Babur,Bayana (Northern India),21 February 1527,21 February 1527,https://military-history.fandom.com/wiki/Battle_of_Bayana
 ,,,,,,
-Udai Singh II,Invasion of Marwar,Sher Shah Suri,"Chittor, Rajasthan (Western India)",1544,,
-Udai Singh II,Battle of Harmada,"Rao Maldeo, Haji Khan Sur","Merta, Rajathan (Western India)",1557,,https://www.rajras.in/1557-battle-of-harmada/
-Udai Singh II,Invasion of Chittor,Akbar,"Chittor, Rajasthan (Western India)",1567,,
+Udai Singh II,Invasion of Marwar,Sher Shah Suri,"Chittor, Rajasthan (Western India)",23 March 1904,23 March 1904,
+Udai Singh II,Battle of Harmada,"Rao Maldeo, Haji Khan Sur","Merta, Rajathan (Western India)",5 April 1904,5 April 1904,https://www.rajras.in/1557-battle-of-harmada/
+Udai Singh II,Invasion of Chittor,Akbar,"Chittor, Rajasthan (Western India)",15 April 1904,15 April 1904,
 ,,,,,,
-Maharana pratap,Battle of Haldighati,Man Singh I of Amber,"Haldghati, Rajasthan (Western India)","June 18, 1576",,https://theprint.in/theprint-essential/why-battle-of-haldighati-between-maharana-pratap-and-akbar-is-controversial-445-years-later/677733/
-,Battle of Dewair,Mughal army,Dewair,1582,,https://www.rajras.in/1582-battle-of-dewair/
+Maharana pratap,Battle of Haldighati,Man Singh I of Amber,"Haldghati, Rajasthan (Western India)",18 June 1576,18 June 1576,https://theprint.in/theprint-essential/why-battle-of-haldighati-between-maharana-pratap-and-akbar-is-controversial-445-years-later/677733/
+Maharana pratap,Battle of Dewair,Mughal army,Dewair,30 April 1904,30 April 1904,https://www.rajras.in/1582-battle-of-dewair/
 ,,,,,,
-Maharana Hammir Singh,Battle of Singoli,Mohammad bin Tughlaq,"Singoli, Madhya pradesh",1336,,https://dharmayudh.com/mewar-rana-hammir-singh-khiljis-muhammad-bin-tuglag/
+Maharana Hammir Singh,Battle of Singoli,Mohammad bin Tughlaq,"Singoli, Madhya pradesh",28 August 1903,28 August 1903,https://dharmayudh.com/mewar-rana-hammir-singh-khiljis-muhammad-bin-tuglag/
 ,,,,,,
-Rao Jodha,Recapture of Mandore,Narbad,Mandore (West India),1453,,https://abhipedia.abhimanu.com/Article/State/ODM4MjMEEQQVV/History-of-capture-of-Mandore-Rajasthan-State
+Rao Jodha,Recapture of Mandore,Narbad,Mandore (West India),23 December 1903,23 December 1903,https://abhipedia.abhimanu.com/Article/State/ODM4MjMEEQQVV/History-of-capture-of-Mandore-Rajasthan-State
 ,,,,,,
-Rana Kumbha ,Battle of Sarangpur,Mahmud Khilji,"Sarangpur, Madhya Pradesh (Central India)",1437,,https://www.rajras.in/1437-battle-sarangpur/
-,Battle of Mandalgarh,Mahmud Khilji,Mandalgarh (West india),1442,,https://www.rajras.in/battle-of-mandalgarh-banas/
-,Battle of Banas,Mahmud Khilji,Banas River (Western India),"October 11, 1446",,https://www.rajras.in/battle-of-mandalgarh-banas/
-,Battle of Nagaur ,"Mujahid Khan, Shams Khan",Nagaur (Western India),1455,,https://www.rajras.in/battle-of-nagaur/
+Rana Kumbha ,Battle of Sarangpur,Mahmud Khilji,"Sarangpur, Madhya Pradesh (Central India)",7 December 1903,7 December 1903,https://www.rajras.in/1437-battle-sarangpur/
+Rana Kumbha ,Battle of Mandalgarh,Mahmud Khilji,Mandalgarh (West india),12 December 1903,12 December 1903,https://www.rajras.in/battle-of-mandalgarh-banas/
+Rana Kumbha ,Battle of Banas,Mahmud Khilji,Banas River (Western India),11 October 1446,11 October 1446,https://www.rajras.in/battle-of-mandalgarh-banas/
+Rana Kumbha ,Battle of Nagaur ,"Mujahid Khan, Shams Khan",Nagaur (Western India),25 December 1903,25 December 1903,https://www.rajras.in/battle-of-nagaur/
 ,,,,,,
-Man Singh Tomar,Conflict with Sikandar Lodi,Sikandar Lodi,"Gwalior, Madhya Paresh (Central India)",1500,1516,https://byjus.com/free-ias-prep/sikandar-lodi/
+Man Singh Tomar,Conflict with Sikandar Lodi,Sikandar Lodi,"Gwalior, Madhya Paresh (Central India)",8 February 1904,24 February 1904,https://byjus.com/free-ias-prep/sikandar-lodi/
 ,,,,,,
-Rao Maldeo Rathore,Battle of Sammel,Sher Shah Suri ,"Jaitaran, Rajasthan (West India)",1544,,https://dharmayudh.com/battle-of-sammel-sher-shah-suri-jaita-kumpa/
+Rao Maldeo Rathore,Battle of Sammel,Sher Shah Suri ,"Jaitaran, Rajasthan (West India)",23 March 1904,23 March 1904,https://dharmayudh.com/battle-of-sammel-sher-shah-suri-jaita-kumpa/
 ,,,,,,
-Rao Chandrasen Rathore,Battle with Ramchandra,Maharaja Ramchandra Singh,"Sojat, Rajasthan (West India)",1562,,https://en.wikipedia.org/wiki/Chandrasen_Rathore
-,Battle with Udai Singh,Udai Singh,"Gangani, Rajasthan",1562,,
-,Battle with Raimal,Raimal,"Dunda, Rajasthan",1562,,
-,Battle at Lohawat,Udai Singh,"Lohawat, Rajasthan","December 01, 1562",,
-,Battle at Nadol,Ramchandra,"Nadol, Rajasthan",1563,,
-,Invasion of Jodhpur,Hussain Quli Khan-i-Jahan,"Jodhpur, Rajasthan",1564,,
-,Siege of Bhadrajun,Akbar,"Bhadrajun, Rajasthan",1571,,
-,Battles against Mughals,"Shah Quli Khan, Rai Singh, Keshav Das, Shahbaz Khan",,1575,,
-,Capture of Siwana Fort,"Akbar, Jalal Khan",Siwana (Rajasthan,1576,,
+Rao Chandrasen Rathore,Battle with Ramchandra,Maharaja Ramchandra Singh,"Sojat, Rajasthan (West India)",10 April 1904,10 April 1904,https://en.wikipedia.org/wiki/Chandrasen_Rathore
+Rao Chandrasen Rathore,Battle with Udai Singh,Udai Singh,"Gangani, Rajasthan",10 April 1904,10 April 1904,
+Rao Chandrasen Rathore,Battle with Raimal,Raimal,"Dunda, Rajasthan",10 April 1904,10 April 1904,
+Rao Chandrasen Rathore,Battle at Lohawat,Udai Singh,"Lohawat, Rajasthan",1 December 1562,1 December 1562,
+Rao Chandrasen Rathore,Battle at Nadol,Ramchandra,"Nadol, Rajasthan",11 April 1904,11 April 1904,
+Rao Chandrasen Rathore,Invasion of Jodhpur,Hussain Quli Khan-i-Jahan,"Jodhpur, Rajasthan",12 April 1904,12 April 1904,
+Rao Chandrasen Rathore,Siege of Bhadrajun,Akbar,"Bhadrajun, Rajasthan",19 April 1904,19 April 1904,
+Rao Chandrasen Rathore,Battles against Mughals,"Shah Quli Khan, Rai Singh, Keshav Das, Shahbaz Khan",,23 April 1904,23 April 1904,
+Rao Chandrasen Rathore,Capture of Siwana Fort,"Akbar, Jalal Khan",Siwana (Rajasthan,24 April 1904,24 April 1904,
 ,,,,,,
-Rana Man Singh I,War against Mewar,Maharana pratap,"Ajmer, Rajasthan","April 03, 1576",,https://en.wikipedia.org/wiki/Man_Singh_I
-,Battle of Haldighati,Maharana pratap,"Haldghati, Rajasthan (Western India)","June 18, 1576",,
-,Conquest of Orissa ,Qatlu Khan Lohani,"Orissa, Odisha (eastern India) ","April 01, 1590",,
+Rana Man Singh I,War against Mewar,Maharana pratap,"Ajmer, Rajasthan",3 April 1576,3 April 1576,https://en.wikipedia.org/wiki/Man_Singh_I
+Rana Man Singh I,Battle of Haldighati,Maharana pratap,"Haldghati, Rajasthan (Western India)",18 June 1576,18 June 1576,
+Rana Man Singh I,Conquest of Orissa ,Qatlu Khan Lohani,"Orissa, Odisha (eastern India) ",1 April 1590,1 April 1590,
 ,,,,,,
-Maharana Amar Singh I,Salim over Mewar,Prince Salim,Mewar (West India),1599,,https://en.wikipedia.org/wiki/Amar_Singh_I#Mughal_invasions_over_Mewar_during_Amar_Singh's_reign
-,Parviz over Mewar,Muhammad Parviz,Mewar (West India),"November 01, 1605",,https://historicalindia.org/article/maharana-amar-singh
-,Mahabat Khan over Mewar,Mahabat Khan,Mewar (West India),1608,,https://www.rajras.in/1606-battle-dewair-amar-singh-vs-sultan/
-,Abdullah Khan over Mewar,Abdullah Khan,Mewar (West India),1609,,
-,Raja Basu over Mewar,Raja Basu,Mewar (West India),1612,,
-,Mirza Aziz Koka in Mewar,Mirza Aziz,Mewar (West India),1613,,
-,Khurram over Mewar,Shah Jahan I,Mewar (West India),1613,,
-,Second Battle of Dewair,Sultan Khan,"Dewair, Rajasthan (West India)",1606,,https://www.rajras.in/1606-battle-dewair-amar-singh-vs-sultan/
+Maharana Amar Singh I,Salim over Mewar,Prince Salim,Mewar (West India),17 May 1904,17 May 1904,https://en.wikipedia.org/wiki/Amar_Singh_I#Mughal_invasions_over_Mewar_during_Amar_Singh's_reign
+Maharana Amar Singh I,Parviz over Mewar,Muhammad Parviz,Mewar (West India),1 November 1605,1 November 1605,https://historicalindia.org/article/maharana-amar-singh
+Maharana Amar Singh I,Mahabat Khan over Mewar,Mahabat Khan,Mewar (West India),26 May 1904,26 May 1904,https://www.rajras.in/1606-battle-dewair-amar-singh-vs-sultan/
+Maharana Amar Singh I,Abdullah Khan over Mewar,Abdullah Khan,Mewar (West India),27 May 1904,27 May 1904,
+Maharana Amar Singh I,Raja Basu over Mewar,Raja Basu,Mewar (West India),30 May 1904,30 May 1904,
+Maharana Amar Singh I,Mirza Aziz Koka in Mewar,Mirza Aziz,Mewar (West India),31 May 1904,31 May 1904,
+Maharana Amar Singh I,Khurram over Mewar,Shah Jahan I,Mewar (West India),31 May 1904,31 May 1904,
+Maharana Amar Singh I,Second Battle of Dewair,Sultan Khan,"Dewair, Rajasthan (West India)",24 May 1904,24 May 1904,https://www.rajras.in/1606-battle-dewair-amar-singh-vs-sultan/
 ,,,,,,
-Raj Singh I,Battle of Udaipur,Aurangzeb,Udaipur,"January 01, 1680",,https://historicalindia.org/article/maharana-raj-singh
-,Battle of the Aravalli Hills,Aurangzeb,Aravalli Hills,"June 01, 1680",,https://www.rajras.in/1680-battle-of-udaipur-and-aravalli-hills/
-,Rajput War,Mughal Empire,Marwar,"July 23, 1679","March 12, 1707",https://en.wikipedia.org/wiki/Rajput_War_(1679%E2%80%931707)#Aftermath
+Raj Singh I,Battle of Udaipur,Aurangzeb,Udaipur,1 January 1680,1 January 1680,https://historicalindia.org/article/maharana-raj-singh
+Raj Singh I,Battle of the Aravalli Hills,Aurangzeb,Aravalli Hills,1 June 1680,1 June 1680,https://www.rajras.in/1680-battle-of-udaipur-and-aravalli-hills/
+Raj Singh I,Rajput War,Mughal Empire,Marwar,23 July 1679,23 July 1679,https://en.wikipedia.org/wiki/Rajput_War_(1679%E2%80%931707)#Aftermath
 ,,,,,,
-Jai Singh I,Battle of the Aravalli Hills,Aurangzeb,Aravalli Hills,"June 01, 1680",,https://www.rajras.in/1680-battle-of-udaipur-and-aravalli-hills/
+Jai Singh I,Battle of the Aravalli Hills,Aurangzeb,Aravalli Hills,1 June 1680,1 June 1680,https://www.rajras.in/1680-battle-of-udaipur-and-aravalli-hills/
 ,,,,,,
-Maharaja Chhatrasal Bundela,Battle of Jaitpur,Muhammad Khan Bangash,Bundelkhand (Central India),"March 01, 1729",,https://indiafacts.org/marathas-bundelkhand-ii-chhatrasal-bundela-peshwa-bajirao/
+Maharaja Chhatrasal Bundela,Battle of Jaitpur,Muhammad Khan Bangash,Bundelkhand (Central India),1 March 1729,1 March 1729,https://indiafacts.org/marathas-bundelkhand-ii-chhatrasal-bundela-peshwa-bajirao/

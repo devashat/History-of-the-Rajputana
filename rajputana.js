@@ -52,6 +52,10 @@ svgTimeline.append("defs").append("clipPath")
     .attr("width", width)
     .attr("height", height);
 
+var color = d3.scaleThreshold()
+    .domain([0.0, 0.1, 0.2, 0.3, 0.5, 0.6, 1, 1.3])
+    .range(d3.schemeYlGnBu[9]);
+
 d3.csv("kings1.csv", function (error, data) {
     if (error) throw error;
 
@@ -146,11 +150,11 @@ d3.csv("wars.csv", function (error, data) {
         .data(data)
         .enter().append("circle")
         .attr("class", "circle")
-        .attr('cx', function (d) { console.log(parseDate(d.start)); return xScale2(parseDate(d.start)); })
+        .attr('cx', function (d) { console.log(xScale2(parseDate(d.end)) - xScale2(parseDate(d.start))); return xScale2(parseDate(d.start)); })
         .attr('cy', function (d) { return yScale2(["Wars"]) + 50; })
         //.attr('r', function (d) { return (xScale2(parseDate(d.end)) - xScale2(parseDate(d.start)));})
-        .attr('r', 15)
-        .style('fill', 'green');
+        .attr('r', 5)
+        .style('fill', function(d) { return color(xScale2(parseDate(d.end)) - xScale2(parseDate(d.start)))});
 
 });
 
