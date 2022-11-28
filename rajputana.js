@@ -66,7 +66,7 @@ d3.csv("kings1.csv", function (error, data) {
     if (error) throw error;
 
     //xScale.domain([function(d) {return d3.min(parseDate(d.start));}, function(d) {return d3.max(parseDate(d.end));}]);
-    xScale.domain([new Date(1100, 0, 0), new Date(2000, 0, 0)]);
+    xScale.domain([new Date(1200, 0, 0), new Date(1801, 0, 0)]);
     yScale.domain(data.map(function (d) { return d.dynasty; }));
     xScale2.domain(xScale.domain());
     yScale2.domain(yScale.domain());
@@ -137,7 +137,7 @@ d3.csv("kings1.csv", function (error, data) {
 d3.csv("wars&enemies.csv", function (error, data) {
     if (error) throw error;
 
-    xScale.domain([new Date(1100, 0, 0), new Date(2000, 0, 0)]);
+    xScale.domain([new Date(1200, 0, 0), new Date(1801, 0, 0)]);
     yScale.domain(["Wars"]);
     xScale2.domain(xScale.domain());
     yScale2.domain(yScale.domain());
@@ -159,8 +159,9 @@ d3.csv("wars&enemies.csv", function (error, data) {
         .attr('cx', function (d) { console.log(parseDate(d.start)); return xScale2(parseDate(d.start)); })
         .attr('cy', function (d) { return yScale2(["Wars"]) + 50; })
         //.attr('r', function (d) { return (xScale2(parseDate(d.end)) - xScale2(parseDate(d.start)));})
-        .attr('r', 5)
+        .attr('r', 10)
         .style('fill', function (d) { return colorScaleWars(d.location) })
+        .style('opacity', '0.6')
         .on("mouseover", function (d) {
             warTooltip.transition()
                 .duration(200)
