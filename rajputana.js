@@ -8,6 +8,10 @@ var tooltip = d3.select("body").append("div")
     .attr("class", "tooltip")
     .style("opacity", 0);
 
+var warTooltip = d3.select("body").append("div")
+    .attr("class", "warTooltip")
+    .style("opacity", 0);
+
 var svgTimeline = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -32,6 +36,8 @@ var yScale = d3.scaleBand().rangeRound([0, height]).padding(0.1);
 var yScale2 = d3.scaleBand().rangeRound([0, height2]).padding(0.1);
 
 var colorScale = d3.scaleOrdinal(d3.schemeCategory10).domain(3);
+
+var colorScaleWars = d3.scaleOrdinal(d3.schemeTableau10).domain(3);
 
 var parseDate = d3.timeParse("%d %B %Y");
 var formatTime = d3.timeFormat("%B %d, %Y");
@@ -60,7 +66,7 @@ d3.csv("kings1.csv", function (error, data) {
     if (error) throw error;
 
     //xScale.domain([function(d) {return d3.min(parseDate(d.start));}, function(d) {return d3.max(parseDate(d.end));}]);
-    xScale.domain([new Date(1100, 0, 0), new Date(1800, 0, 0)]);
+    xScale.domain([new Date(1100, 0, 0), new Date(2000, 0, 0)]);
     yScale.domain(data.map(function (d) { return d.dynasty; }));
     xScale2.domain(xScale.domain());
     yScale2.domain(yScale.domain());
@@ -128,10 +134,10 @@ d3.csv("kings1.csv", function (error, data) {
 
 });
 
-d3.csv("wars.csv", function (error, data) {
+d3.csv("wars&enemies.csv", function (error, data) {
     if (error) throw error;
 
-    xScale.domain([new Date(1100, 0, 0), new Date(1800, 0, 0)]);
+    xScale.domain([new Date(1100, 0, 0), new Date(2000, 0, 0)]);
     yScale.domain(["Wars"]);
     xScale2.domain(xScale.domain());
     yScale2.domain(yScale.domain());
@@ -150,11 +156,24 @@ d3.csv("wars.csv", function (error, data) {
         .data(data)
         .enter().append("circle")
         .attr("class", "circle")
-        .attr('cx', function (d) { console.log(xScale2(parseDate(d.end)) - xScale2(parseDate(d.start))); return xScale2(parseDate(d.start)); })
+        .attr('cx', function (d) { console.log(parseDate(d.start)); return xScale2(parseDate(d.start)); })
         .attr('cy', function (d) { return yScale2(["Wars"]) + 50; })
         //.attr('r', function (d) { return (xScale2(parseDate(d.end)) - xScale2(parseDate(d.start)));})
         .attr('r', 5)
-        .style('fill', function(d) { return color(xScale2(parseDate(d.end)) - xScale2(parseDate(d.start)))});
+        .style('fill', function (d) { return colorScaleWars(d.location) })
+        .on("mouseover", function (d) {
+            warTooltip.transition()
+                .duration(200)
+                .style("opacity", .9);
+            warTooltip.html("<b>" + d.war + "</b> <br>" + formatTime(parseDate(d.start)) + " - " + formatTime(parseDate(d.end)) + "<br><br> <b>King vs Enemy</b> <br>" + d.king + " v. " + d.enemies + "<br><br> <b>Location</b> <br>" + d.location)
+                .style("left", (d3.event.pageX) + "px")
+                .style("top", (d3.event.pageY - 28) + "px");
+        })
+        .on("mouseout", function (d) {
+            warTooltip.transition()
+                .duration(500)
+                .style("opacity", 0);
+        });
 
 });
 
