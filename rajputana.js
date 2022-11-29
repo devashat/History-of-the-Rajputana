@@ -62,7 +62,7 @@ var color = d3.scaleThreshold()
     .domain([0.0, 0.1, 0.2, 0.3, 0.5, 0.6, 1, 1.3])
     .range(d3.schemeYlGnBu[9]);
 
-d3.csv("kings1.csv", function (error, data) {
+d3.csv("kings.csv", function (error, data) {
     if (error) throw error;
 
     //xScale.domain([function(d) {return d3.min(parseDate(d.start));}, function(d) {return d3.max(parseDate(d.end));}]);
@@ -90,6 +90,7 @@ d3.csv("kings1.csv", function (error, data) {
         .attr("width", function (d) { return (xScale(parseDate(d.end)) - xScale(parseDate(d.start))); })
         .attr("height", yScale.bandwidth())
         .style("fill", function (d) { return colorScale(d.name); })
+        .style("rx", 3)
         .on("mouseover", function (d) {
             tooltip.transition()
                 .duration(200)
@@ -103,6 +104,15 @@ d3.csv("kings1.csv", function (error, data) {
                 .duration(500)
                 .style("opacity", 0);
         });
+
+
+    // kingTimeLine.selectAll(".timeRect")
+    //     .data(data)
+    //     .append("text")
+    //     .text(function (d) {
+    //         return d.name
+    //     })
+    //     .attr("transform", "rotate(-90)");
 
     context.append("g")
         .attr("class", "axis axis--x")
@@ -122,7 +132,8 @@ d3.csv("kings1.csv", function (error, data) {
         .attr("x", function (d) { return xScale2(parseDate(d.start)); })
         .attr("width", function (d) { return (xScale2(parseDate(d.end)) - xScale2(parseDate(d.start))); })
         .attr("height", yScale2.bandwidth())
-        .style("fill", function (d) { return colorScale(d.name); });
+        .style("fill", function (d) { return colorScale(d.name); })
+        .style("rx", 3);
 
     context.append("g")
         .attr("class", "brush")
