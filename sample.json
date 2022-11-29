@@ -6,27 +6,42 @@
             "children": [
                 {
                     "name": "Maharana Pratap",
-                    "children": []
-                }
-            ]
-        },
-        {
-            "name": "TEST",
-            "children": [
-                {
-                    "name": "SON OF TEST",
                     "children": [
                         {
-                            "name": "GRANDSON I OF TEST",
-                            "children": []
-                        },
-                        {
-                            "name": "GRANDSON II OF TEST",
-                            "children": []
+                            "name": "Rana Amar Singh I",
+                            "children": [
+                                {
+                                    "name": "Rana Karan Singh II",
+                                    "children": [
+                                        {
+                                            "name": "Rana Jagat Singh I",
+                                            "children": [
+                                                {
+                                                    "name": "Rana Raj Singh I",
+                                                    "children": [
+                                                        {
+                                                            "name": "Rana Jai Singh I",
+                                                            "children": []
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 }
             ]
+        },
+        {
+            "name": "Rana Ratan Singh II",
+            "children": []
+        },
+        {
+            "name": "Rana Vikramaditya Singh",
+            "children": []
         }
     ]
 }
