@@ -36,6 +36,8 @@ var yScale = d3.scaleBand().rangeRound([0, height]).padding(0.1);
 var yScale2 = d3.scaleBand().rangeRound([0, height2]).padding(0.1);
 
 var colorScale = d3.scaleOrdinal(d3.schemeCategory10).domain(3);
+var colorScaleSisodia = d3.scaleOrdinal(d3.schemeBlues).domain(3);
+var colorScaleRathore = d3.scaleOrdinal(d3.interpolateReds).domain([1,20]);
 
 var colorScaleWars = d3.scaleOrdinal(d3.schemeTableau10).domain(3);
 
@@ -71,25 +73,36 @@ d3.csv("kings.csv", function (error, data) {
     xScale2.domain(xScale.domain());
     yScale2.domain(yScale.domain());
 
-    kingTimeLine.append("g")
-        .attr("class", "xaxis")
-        .attr("transform", "translate(0," + height + ")")
-        .call(xAxis);
-
-    kingTimeLine.append("g")
-        .attr("class", "axis axis--y")
-        .call(yAxis)
-        .append("text");
-
+    
     kingTimeLine.append("g").selectAll("rect")
         .data(data)
         .enter().append("rect")
         .attr("class", "timeRect")
+        .attr("id", function(d){ return d.name.replaceAll(' ',''); })
         .attr("y", function (d) { return yScale(d.dynasty); })
         .attr("x", function (d) { return xScale(parseDate(d.start)); })
+        .attr("color", function (d) { 
+            if (d.dynasty.localeCompare("Sisodia")==0){
+                
+               return colorScale(d.name);
+            }else{  
+                //console.log(d.dynasty.localeCompare("Sisodia")==0);
+                return colorScale(d.name)
+            }
+ 
+        ;})
         .attr("width", function (d) { return (xScale(parseDate(d.end)) - xScale(parseDate(d.start))); })
         .attr("height", yScale.bandwidth())
-        .style("fill", function (d) { return colorScale(d.name); })
+        .style("fill", function (d) { 
+            if (d.dynasty === "Sisodia"){
+                //console.log(d.dynasty.localeCompare("Sisodia")==0);
+                //console.log(colorScale(d.name))
+                return colorScale(d.name);
+            }else{  
+                //console.log(d.dynasty.localeCompare("Sisodia")==0);
+                //console.log(colorScaleRathore(d.name))
+                return colorScale(d.name);}
+        ;})
         .style("rx", 3)
         .on("mouseover", function (d) {
             tooltip.transition()
@@ -104,7 +117,18 @@ d3.csv("kings.csv", function (error, data) {
                 .duration(500)
                 .style("opacity", 0);
         });
+    
+    
 
+    kingTimeLine.append("g")
+        .attr("class", "xaxis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis);
+
+    kingTimeLine.append("g")
+        .attr("class", "axis axis--y")
+        .call(yAxis)
+        .append("text");
 
     // kingTimeLine.selectAll(".timeRect")
     //     .data(data)
@@ -167,11 +191,18 @@ d3.csv("wars&enemies.csv", function (error, data) {
         .data(data)
         .enter().append("circle")
         .attr("class", "circle")
-        .attr('cx', function (d) { console.log(parseDate(d.start)); return xScale2(parseDate(d.start)); })
+        .attr('cx', function (d) { //console.log(parseDate(d.start)); 
+            return xScale2(parseDate(d.start)); })
         .attr('cy', function (d) { return yScale2(["Wars"]) + 50; })
         //.attr('r', function (d) { return (xScale2(parseDate(d.end)) - xScale2(parseDate(d.start)));})
         .attr('r', 10)
-        .style('fill', function (d) { return colorScaleWars(d.location) })
+        .style('fill', function (d) { 
+            //console.log((""+d.king).replaceAll(' ','')); 
+            if (d3.select(("#"+d.king).replaceAll(' ','')).size() != 0){
+                //console.log(d3.select(("#"+d.king).replaceAll(' ','')).attr("color"));
+                return d3.select(("#"+d.king).replaceAll(' ','')).attr("color");
+            }                
+            return "#5de9f9";}) //
         .style('opacity', '0.6')
         .on("mouseover", function (d) {
             warTooltip.transition()
