@@ -108,3 +108,8 @@
     stroke: #ccc;
     stroke-width: 2px;
 }
+
+/* sources styling */
+ul li {
+    font-size: 15px;
+}

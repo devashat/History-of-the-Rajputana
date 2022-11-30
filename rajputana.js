@@ -104,7 +104,7 @@ d3.csv("kings.csv", function (error, data) {
             tooltip.transition()
                 .duration(200)
                 .style("opacity", .9);
-            tooltip.html(d.name + "<br>" + formatTime(parseDate(d.birth)) + " - " + formatTime(parseDate(d.death)) + "<br><br> Reign <br>" + formatTime(parseDate(d.start)) + " - " + formatTime(parseDate(d.end)))
+            tooltip.html("<b>" + d.name + "</b> <br>" + formatTime(parseDate(d.birth)) + " - " + formatTime(parseDate(d.death)) + "<br><br> <b>Reign</b> <br>" + formatTime(parseDate(d.start)) + " - " + formatTime(parseDate(d.end)))
                 .style("left", (d3.event.pageX) + "px")
                 .style("top", (d3.event.pageY - 28) + "px");
         })
