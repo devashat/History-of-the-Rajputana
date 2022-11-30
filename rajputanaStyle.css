@@ -113,3 +113,38 @@
 ul li {
     font-size: 15px;
 }
+
+/* legend styling */
+#legendDiv {
+    position: absolute;
+    top: 175px;
+    left: 975px;
+}
+
+.sisodia {
+    fill: url(#mainGradient);
+}
+
+.rathore {
+    fill: url(#mainGradient2);
+}
+
+.noDyna {
+    fill: #89ff27;
+}
+
+.stop-left1 {
+    stop-color: #90c2de;  /* Indigo */
+}
+
+.stop-right1 {
+    stop-color: #08306b;  /* Teal */
+}
+
+.stop-left2 {
+    stop-color: #fb7859;  /* Indigo */
+}
+
+.stop-right2 {
+    stop-color: #67000d;  /* Teal */
+}

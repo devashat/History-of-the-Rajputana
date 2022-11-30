@@ -14,7 +14,71 @@ var warTooltip = d3.select("body").append("div")
 
 var svgTimeline = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+    .attr("height", height + margin.top + margin.bottom);
+
+var legend = d3.select("#legendDiv")
+    .append("svg")
+    .attr("class", "svgLegend")
+    .attr("width", 175)
+    .attr("height", 200);
+
+legend.append("rect").attr("class", "sisodia")
+    .attr("width", 50)
+    .attr("height", 25)
+    .style("rx", 3);
+
+legend.append("rect").attr("class", "rathore")
+    .attr("width", 50)
+    .attr("height", 25)
+    .attr("x", 0)
+    .attr("y", 65)
+    .style("rx", 3);
+
+legend.append("rect").attr("class", "noDyna")
+    .attr("width", 50)
+    .attr("height", 25)
+    .attr("x", 0)
+    .attr("y", 130)
+    .style("rx", 3);
+
+legend.append("text")
+    .attr("x", 0)
+    .attr("y", 40)
+    .text("Sisodia Dynasty Kings");
+
+legend.append("text")
+    .attr("x", 0)
+    .attr("y", 105)
+    .text("Rathore Dynasty Kings");
+
+legend.append("text")
+    .attr("x", 0)
+    .attr("y", 170)
+    .text("Kings With No Dynasty");
+
+var svgGradient = d3.select(".svgLegend")
+    .append('linearGradient')
+    .attr('id', 'mainGradient');
+
+var svgGradient2 = d3.select(".svgLegend")
+    .append('linearGradient')
+    .attr('id', 'mainGradient2');
+
+svgGradient.append('stop')
+    .attr('class', 'stop-left1')
+    .attr('offset', '0');
+
+svgGradient.append('stop')
+    .attr('class', 'stop-right1')
+    .attr('offset', '1');
+
+svgGradient2.append('stop')
+    .attr('class', 'stop-left2')
+    .attr('offset', '0');
+
+svgGradient2.append('stop')
+    .attr('class', 'stop-right2')
+    .attr('offset', '1');
 
 var warTimeline = svgTimeline
     .append("g")
@@ -37,11 +101,11 @@ var yScale2 = d3.scaleBand().rangeRound([0, height2]).padding(0.1);
 
 var colorScale = d3.scaleOrdinal(d3.schemeCategory10).domain(3);
 var colorScaleSisodia = d3.scaleOrdinal()
-    .domain(1,20)
-    .range( ["#90c2de","#7bb6d9","#5fa6d1","#3e8dc3","#2d7dbb","#2979b8","#206eb2","#1c6aaf","#1966ac","#1865ab","#1763aa","#0f579f","#094589","#083776","#083370","#08326e","#08316d","#08306b"]);
+    .domain(1, 20)
+    .range(["#90c2de", "#7bb6d9", "#5fa6d1", "#3e8dc3", "#2d7dbb", "#2979b8", "#206eb2", "#1c6aaf", "#1966ac", "#1865ab", "#1763aa", "#0f579f", "#094589", "#083776", "#083370", "#08326e", "#08316d", "#08306b"]);
 var colorScaleRathore = d3.scaleOrdinal()
-    .domain(1,20)
-    .range( ["#fb7859","#f86448","#f34e38","#ee4332","#df2d26","#d92723","#d72623","#d62522","#d52422","#c91b1e","#b61419","#b51319","#b41318","#b21218","#b11218","#b01218","#ae1117","#ad1117","#940b13","#920a13","#900a13","#8f0a12","#69000d","#67000d"]);
+    .domain(1, 20)
+    .range(["#fb7859", "#f86448", "#f34e38", "#ee4332", "#df2d26", "#d92723", "#d72623", "#d62522", "#d52422", "#c91b1e", "#b61419", "#b51319", "#b41318", "#b21218", "#b11218", "#b01218", "#ae1117", "#ad1117", "#940b13", "#920a13", "#900a13", "#8f0a12", "#69000d", "#67000d"]);
 
 var colorScaleWars = d3.scaleOrdinal(d3.schemeTableau10).domain(3);
 
@@ -77,28 +141,30 @@ d3.csv("kings.csv", function (error, data) {
     xScale2.domain(xScale.domain());
     yScale2.domain(yScale.domain());
 
-    
+
     kingTimeLine.append("g").selectAll("rect")
         .data(data)
         .enter().append("rect")
         .attr("class", "timeRect")
-        .attr("id", function(d){ return d.name.replaceAll(' ',''); })
+        .attr("id", function (d) { return d.name.replaceAll(' ', ''); })
         .attr("y", function (d) { return yScale(d.dynasty); })
         .attr("x", function (d) { return xScale(parseDate(d.start)); })
-        .attr("color", function (d) { 
-            if (d.dynasty.localeCompare("Sisodia")==0){
+        .attr("color", function (d) {
+            if (d.dynasty.localeCompare("Sisodia") == 0) {
                 return colorScaleSisodia(d.name);
-            }else{  
+            } else {
                 return colorScaleRathore(d.name);
-            };})
+            };
+        })
         .attr("width", function (d) { return (xScale(parseDate(d.end)) - xScale(parseDate(d.start))); })
         .attr("height", yScale.bandwidth())
-        .style("fill", function (d) { 
-            if (d.dynasty === "Sisodia"){
+        .style("fill", function (d) {
+            if (d.dynasty === "Sisodia") {
                 return colorScaleSisodia(d.name);
-            }else{  
+            } else {
                 return colorScaleRathore(d.name);
-            };})
+            };
+        })
         .style("rx", 3)
         .on("mouseover", function (d) {
             tooltip.transition()
@@ -113,8 +179,8 @@ d3.csv("kings.csv", function (error, data) {
                 .duration(500)
                 .style("opacity", 0);
         });
-    
-    
+
+
 
     kingTimeLine.append("g")
         .attr("class", "xaxis")
@@ -152,11 +218,13 @@ d3.csv("kings.csv", function (error, data) {
         .attr("x", function (d) { return xScale2(parseDate(d.start)); })
         .attr("width", function (d) { return (xScale2(parseDate(d.end)) - xScale2(parseDate(d.start))); })
         .attr("height", yScale2.bandwidth())
-        .style("fill", function (d) { if (d.dynasty === "Sisodia"){
+        .style("fill", function (d) {
+            if (d.dynasty === "Sisodia") {
                 return colorScaleSisodia(d.name);
-            }else{  
+            } else {
                 return colorScaleRathore(d.name);
-            };}) 
+            };
+        })
         .style("rx", 3);
 
     context.append("g")
@@ -192,17 +260,19 @@ d3.csv("wars&enemies.csv", function (error, data) {
         .enter().append("circle")
         .attr("class", "circle")
         .attr('cx', function (d) { //console.log(parseDate(d.start)); 
-            return xScale2(parseDate(d.start)); })
+            return xScale2(parseDate(d.start));
+        })
         .attr('cy', function (d) { return yScale2(["Wars"]) + 50; })
         //.attr('r', function (d) { return (xScale2(parseDate(d.end)) - xScale2(parseDate(d.start)));})
         .attr('r', 10)
-        .style('fill', function (d) { 
+        .style('fill', function (d) {
             //console.log((""+d.king).replaceAll(' ','')); 
-            if (d3.select(("#"+d.king).replaceAll(' ','')).size() != 0){
+            if (d3.select(("#" + d.king).replaceAll(' ', '')).size() != 0) {
                 //console.log(d3.select(("#"+d.king).replaceAll(' ','')).attr("color"));
-                return d3.select(("#"+d.king).replaceAll(' ','')).attr("color");
-            }                
-            return "#89ff27";}) // wars of unshown kings
+                return d3.select(("#" + d.king).replaceAll(' ', '')).attr("color");
+            }
+            return "#89ff27";
+        }) // wars of unshown kings
         .style('opacity', '0.6')
         .on("mouseover", function (d) {
             warTooltip.transition()
