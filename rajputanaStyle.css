@@ -3,6 +3,25 @@ body {
     font-family: Arial;
 }
 
+/* image styling */
+
+.img {
+    width: 225px;
+    height: 225px;
+}
+
+#indiaMap {
+    position: absolute;
+    top: 400px;
+    left: 975px;
+}
+
+#rajputanaMap {
+    position: absolute;
+    top: 400px;
+    left: 1200px;
+}
+
 /* Footer Styling */
 .authors {
     line-height: 1;
