@@ -4,15 +4,19 @@ var margin = { top: 200, right: 80, bottom: 250, left: 125 },
     height = 750 - margin.top - margin.bottom,
     height2 = 750 - margin2.top - margin2.bottom;
 
-var tooltip = d3.select("body").append("div")
+var dynasty = "Sisodia";
+var dynastyFile = "sisodias.json";
+    
+
+var tooltip = d3.select("#timelineDiv").append("div")
     .attr("class", "tooltip")
     .style("opacity", 0);
 
-var warTooltip = d3.select("body").append("div")
+var warTooltip = d3.select("#timelineDiv").append("div")
     .attr("class", "warTooltip")
     .style("opacity", 0);
 
-var svgTimeline = d3.select("body").append("svg")
+var svgTimeline = d3.select("#timelineDiv").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom);
 
@@ -304,15 +308,24 @@ function brushed(d) {
         .attr('cx', function (d) { return xScale(parseDate(d.start)); });
 }
 
+var dmargin = { top: 0, right: 80, bottom: 0, left: 250 }
+    dwidth = 2800 - dmargin.left - dmargin.right,
+    dheight = 300 - dmargin.top - dmargin.bottom;
 
+var dynasty = "Sisodia";
+var dynastyFile = "sisodias.json";
 
-var svgDenogram = d3.select("body").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+var svgDenogram = d3.select("#dynastyDiv").append("svg")
+    .attr("width", dwidth + dmargin.left + dmargin.right)
+    .attr("height", dheight + dmargin.top + dmargin.bottom)
     .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    .attr("transform", "translate(" + dmargin.left + "," + dmargin.top + ")");
 
-d3.json("sisodias.json", function (error, treeData) {
+drawDenoGram();
+
+function drawDenoGram(){
+
+d3.json(dynastyFile, function (error, treeData) {
     if (error) return console.error(error);
 
     var i = 0,
@@ -483,3 +496,31 @@ d3.json("sisodias.json", function (error, treeData) {
     }
 
 });
+
+}
+
+var data = ["Sisodia", "Rathore"];
+
+var select = d3.select('#dynastySelectDiv')
+  .append('select')
+  	.attr('class','select')
+    .on('change',onchange)
+
+var options = select
+  .selectAll('option')
+	.data(data).enter()
+	.append('option')
+		.text(function (d) { return d; });
+
+function onchange() {
+	selectValue = d3.select('select').property('value')
+
+    if (selectValue === "Sisodia" )
+        dynastyFile = "sisodias.json"
+    if (selectValue === "Rathore" )
+        dynastyFile = "rathores.json"
+
+    svgDenogram.selectAll('*').remove();
+
+    drawDenoGram();
+};
