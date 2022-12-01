@@ -1,0 +1,28 @@
+{
+    "name": "Rao Jodha Rathore",
+    "children": [
+        {
+            "name": "Rao Satal Rathore",
+            "children": []
+        },
+        {
+            "name": "Rao Suja Rathore",
+            "children": [
+                {
+                    "name": "Rao Ganga Rathore",
+                    "children": [
+                        {
+                            "name": "Rao Maldeo Rathore",
+                            "children": [
+                                {
+                                    "name": "Rao Chandrasen Rathore",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

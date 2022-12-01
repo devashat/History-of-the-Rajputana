@@ -312,7 +312,7 @@ var svgDenogram = d3.select("body").append("svg")
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.json("sample.json", function (error, treeData) {
+d3.json("sisodias.json", function (error, treeData) {
     if (error) return console.error(error);
 
     var i = 0,

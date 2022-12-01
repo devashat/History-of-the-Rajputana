@@ -1,0 +1,82 @@
+{
+    "name": "Maharana Hammir Singh",
+    "children": [
+        {
+            "name": "Rana Kshetra Singh",
+            "children": [
+                {
+                    "name": "Rana Lakha Singh",
+                    "children": [
+                        {
+                            "name": "Rana Mokal Singh",
+                            "children": [
+                                {
+                                    "name": "Maharana Kumbha",
+                                    "children": [
+                                        {
+                                            "name": "Rana Udai Singh I",
+                                            "children": []
+                                        },
+                                        {
+                                            "name": "Rana Raimal",
+                                            "children": [
+                                                {
+                                                    "name": "Rana Sanga",
+                                                    "children": [
+                                                        {
+                                                            "name": "Ratan Singh II",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "name": "Vikramaditya Singh",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "name": "Rana Udai Singh II",
+                                                            "children": [
+                                                                {
+                                                                    "name": "Maharana Pratap",
+                                                                    "children": [
+                                                                        {
+                                                                            "name": "Rana Amar Singh I",
+                                                                            "children": [
+                                                                                {
+                                                                                    "name": "Rana Karan Singh II",
+                                                                                    "children": [
+                                                                                        {
+                                                                                            "name": "Rana Jagat Singh I",
+                                                                                            "children": [
+                                                                                                {
+                                                                                                    "name": "Rana Raj Singh I",
+                                                                                                    "children": [
+                                                                                                        {
+                                                                                                            "name": "Rana Jai Singh I",
+                                                                                                            "children": []
+                                                                                                        }
+                                                                                                    ]
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
