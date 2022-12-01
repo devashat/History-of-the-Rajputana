@@ -196,28 +196,14 @@ d3.csv("kings.csv", function (error, data) {
         .call(yAxis)
         .append("text");
 
-    // kingTimeLine.selectAll(".timeRect")
-    //     .data(data)
-    //     .append("text")
-    //     .text(function (d) {
-    //         return d.name
-    //     })
-    //     .attr("transform", "rotate(-90)");
-
     context.append("g")
         .attr("class", "axis axis--x")
         .attr("transform", "translate(0," + height2 + ")")
         .call(xAxis2);
 
-    // context.append("g")
-    //     .attr("class", "axis axis--y")
-    //     .call(yAxis2)
-    //     .append("text");
-
     context.selectAll("rect")
         .data(data)
         .enter().append("rect")
-        //.attr("class", "rect")
         .attr("y", function (d) { return yScale2(d.dynasty); })
         .attr("x", function (d) { return xScale2(parseDate(d.start)); })
         .attr("width", function (d) { return (xScale2(parseDate(d.end)) - xScale2(parseDate(d.start))); })
@@ -237,8 +223,6 @@ d3.csv("kings.csv", function (error, data) {
         .call(brush)
         .call(brush.move, xScale.range());
 
-    //[xScale(1400), xScale(1600)]
-
 });
 
 d3.csv("wars&enemies.csv", function (error, data) {
@@ -248,11 +232,6 @@ d3.csv("wars&enemies.csv", function (error, data) {
     yScale.domain(["Wars"]);
     xScale2.domain(xScale.domain());
     yScale2.domain(yScale.domain());
-
-    // warTimeline.append("g")
-    //     .attr("class", "topAxis")
-    //     .attr("transform", "translate(0," + height2 + ")")
-    //     .call(xAxis2);
 
     warTimeline.append("g")
         .attr("class", "axis axis--y")
@@ -267,12 +246,10 @@ d3.csv("wars&enemies.csv", function (error, data) {
             return xScale2(parseDate(d.start));
         })
         .attr('cy', function (d) { return yScale2(["Wars"]) + 50; })
-        //.attr('r', function (d) { return (xScale2(parseDate(d.end)) - xScale2(parseDate(d.start)));})
         .attr('r', 10)
-        .style('fill', function (d) {
-            //console.log((""+d.king).replaceAll(' ','')); 
+        .style('fill', function (d) { 
             if (d3.select(("#" + d.king).replaceAll(' ', '')).size() != 0) {
-                //console.log(d3.select(("#"+d.king).replaceAll(' ','')).attr("color"));
+                console.log(d3.select(("#"+d.king).replaceAll(' ','')).attr("color"));
                 return d3.select(("#" + d.king).replaceAll(' ', '')).attr("color");
             }
             return "#89ff27";
