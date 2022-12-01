@@ -23,7 +23,7 @@ var svgTimeline = d3.select("#timelineDiv").append("svg")
 var legend = d3.select("#legendDiv")
     .append("svg")
     .attr("class", "svgLegend")
-    .attr("width", 175)
+    .attr("width", 250)
     .attr("height", 200);
 
 legend.append("rect").attr("class", "sisodia")
