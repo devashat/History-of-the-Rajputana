@@ -48,7 +48,7 @@ legend.append("rect").attr("class", "noDyna")
 legend.append("text")
     .attr("x", 0)
     .attr("y", 40)
-    .text("Sisodia Dynasty Kings");
+    .text("Sisodia Dynasty Kings (Mewar)");
 
 legend.append("text")
     .attr("x", 0)
@@ -58,7 +58,7 @@ legend.append("text")
 legend.append("text")
     .attr("x", 0)
     .attr("y", 105)
-    .text("Rathore Dynasty Kings");
+    .text("Rathore Dynasty Kings (Marwar)");
 
 legend.append("text")
     .attr("x", 0)
