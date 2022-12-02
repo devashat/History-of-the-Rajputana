@@ -222,7 +222,7 @@ d3.csv("kings.csv", function (error, data) {
             if (d.dynasty === "Sisodia") {
                 return colorScaleSisodia(d.reign);
             } else {
-                return colorScaleRathore(d.name);
+                return colorScaleRathore(d.reign);
             };
         })
         .style("rx", 3);
